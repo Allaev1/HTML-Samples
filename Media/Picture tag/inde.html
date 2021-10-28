@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture tag</title>
+</head>
+
+<body>
+    <h1>Sample of picture tag</h1>
+
+    <p>Resize window to see picture tag in action</p>
+
+    <picture>
+        <source media="(min-width:950px)" srcset="Images/Mountains1.jpg">
+        <source media="(min-width:650px)" srcset="Images/Mountains2.jpg">
+        <img src="Images/Mountains.jpg" alt="Mountains">
+    </picture>
+
+    <h2>Note!</h2>
+    <p>The img(child tag of picture tag) element is required as the last child tag of the picture declaration block. The img element is used to provide backward compatibility for browsers that do not support the picture element, or if none of the source
+        tags matched.
+    </p>
+
+    <a href="https://www.w3schools.com/html/html_images_picture.asp">Link to picture tag</a>
+</body>
+
+</html>
