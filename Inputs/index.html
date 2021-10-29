@@ -9,7 +9,78 @@
 </head>
 
 <body>
+    <h1>Input types</h1>
+    <ul>
+        <li>
+            <p>Type = "Button"</p>
+            <input type="button" value="Click me">
+        </li>
+        <li>
+            <p>Type = "Checkbox"</p>
+            <input type="checkbox">
+        </li>
+        <li>
+            <p>Type = "Color"</p>
+            <input type="color">
+        </li>
+        <li>
+            <p>Type = "Date"</p>
+            <input type="date">
+        </li>
+        <li>
+            <p>Type = "DateTime"</p>
+            <p style="font-style:italic; font-weight: bold;">Obsolete</p>
+            <input type="datetime" value="Click me">
+        </li>
+        <li>
+            <p>Type = "Datatime-local"</p>
+            <p style="font-style:italic; font-weight: bold;">Perefer over type = "DateTime"</p>
+            <input type="datetime-local">
+        </li>
+        <li>
+            <p>Type = "email"</p>
+            <label for="myemailtag">Enter your email(Click on me and focus will be changed on the input):</label>
+            <input id="myemailtag" type="email">
+        </li>
+        <li>
+            <input id="myfiletag" type="file">
+        </li>
+        <li>
+            <p for="myhiddentag">Here is input with type="hidden"</p>
+            <input id="myhiddentag" type="hidden">
+        </li>
+        <li>
+            <p>Type = "image"</p>
+            <input type="image">
+        </li>
+        <li>
+            <p>Type = "month"</p>
+            <input type="month" min="2018-03" max="2020-06" value="2021-07">
+        </li>
+        <li>
+            <p>Type = "number"</p>
+            <input type="number" step="10" list="defaultNumbers">
+            <span class="validity"></span>
+            <datalist id="defaultNumbers">
+                <option value="1">
+                <option value="2">
+                <option value="3">
+                <option value="4">
+            </datalist>
+        </li>
+        <li>
+            <p>Type = "password"</p>
+            <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">
+        </li>
+        <li>
+            <p>Type = "radio"</p>
+            <input type="radio" id="contactChoice1" name="contact" value="email">
 
+            <input type="radio" id="contactChoice2" name="contact" value="phone">
+
+            <input type="radio" id="contactChoice3" name="contact" value="mail">
+        </li>
+    </ul>
 </body>
 
 </html>
