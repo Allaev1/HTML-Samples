@@ -85,7 +85,7 @@
             <p>Type = "range"</p>
             <input type="range" max="100" min="0" step="1">
 
-            <input type="range" list="tickmarks">
+            <input type="range" list="tickmarks" step="10">
             <datalist id="tickmarks">
                 <option value="0"></option>
                 <option value="10"></option>
@@ -99,6 +99,14 @@
                 <option value="90"></option>
                 <option value="100"></option>
             </datalist>
+        </li>
+        <li>
+            <p>Type = "search"</p>
+            <input type="search" list="variants" placeholder="two letters followed by four numbers">
+        </li>
+        <li>
+            <p>Type = "tel"</p>
+            <input type="tel">
         </li>
     </ul>
 </body>
