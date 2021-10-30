@@ -74,11 +74,31 @@
         </li>
         <li>
             <p>Type = "radio"</p>
-            <input type="radio" id="contactChoice1" name="contact" value="email">
+            <p style="font-style: italic; font-weight: bold;">
+                NOTE: there can be only one selected radio button among groups of radio buttons in order to create group of radio buttons set "name" attributes of this buttons to the same value
+            </p>
+            <input type="radio" name="horizontal radio buttons" value="email">
+            <input type="radio" name="horizontal radio buttons" value="phone">
+            <input type="radio" name="horizontal radio buttons" value="mail">
+        </li>
+        <li>
+            <p>Type = "range"</p>
+            <input type="range" max="100" min="0" step="1">
 
-            <input type="radio" id="contactChoice2" name="contact" value="phone">
-
-            <input type="radio" id="contactChoice3" name="contact" value="mail">
+            <input type="range" list="tickmarks">
+            <datalist id="tickmarks">
+                <option value="0"></option>
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50"></option>
+                <option value="60"></option>
+                <option value="70"></option>
+                <option value="80"></option>
+                <option value="90"></option>
+                <option value="100"></option>
+            </datalist>
         </li>
     </ul>
 </body>
