@@ -9,23 +9,37 @@
 </head>
 
 <body>
-    <form id="imageForm" enctype="multipart/form-data">
-        <h1>
-            Testing input with type = "file"
-        </h1>
+    <h1>
+        Testing input with type = "file"
+    </h1>
 
-        <div>
-            <label for="imagePicker">
-                Choose image
-            </label>
-            <input id="imagePicker" type="file" accept="image/*" capture>
-        </div>
+    <div>
+        <label for="imagePicker">
+            Choose image
+        </label>
+        <input id="imagePicker" type="file" accept="image/*" capture>
+    </div>
 
-        <div>
-            <input type="submit" value="Submit image">
-        </div>
-    </form>
+    <div>
+        <img id="imagePreview">
+    </div>
 
+    <script>
+        document.querySelector("#imagePicker").addEventListener("change", function() {
+            const reader = new FileReader();
+
+            reader.addEventListener("load", () => {
+                localStorage.setItem("recent-image", reader.result);
+                const recentImageDataUrl = localStorage.getItem("recent-image");
+
+                if (recentImageDataUrl) {
+                    document.querySelector("#imagePreview").setAttribute("src", recentImageDataUrl);
+                }
+            });
+
+            reader.readAsDataURL(this.files[0]);
+        })
+    </script>
 </body>
 
 </html>
