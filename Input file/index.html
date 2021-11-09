@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Testing input with type = "file"
+    </h1>
+
+    <div>
+        <label for="imageCapturer">
+            Capture image
+        </label>
+        <input id="imageCapturer" type="file" accept="image/*" capture>
+    </div>
+
+    <div>
+        <label for="imagePicker">
+            Choose image
+        </label>
+        <input id="imagePicker" type="file" accept="image/*">
+    </div>
+
+    <div>
+        <img id="imagePreview">
+    </div>
+
+    <script>
+        function showImage() {
+            const reader = new FileReader();
+
+            reader.addEventListener("load", () => {
+                localStorage.setItem("recent-image", reader.result);
+                const recentImageDataUrl = localStorage.getItem("recent-image");
+
+                if (recentImageDataUrl) {
+                    document.querySelector("#imagePreview").setAttribute("src", recentImageDataUrl);
+                }
+            });
+
+            reader.readAsDataURL(this.files[0]);
+        }
+
+        document.querySelector("#imageCapturer").addEventListener("change", showImage);
+
+        document.querySelector("#imagePicker").addEventListener("change", showImage);
+    </script>
+</body>
+
+</html>
