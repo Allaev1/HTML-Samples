@@ -14,10 +14,17 @@
     </h1>
 
     <div>
+        <label for="imageCapturer">
+            Capture image
+        </label>
+        <input id="imageCapturer" type="file" accept="image/*" capture>
+    </div>
+
+    <div>
         <label for="imagePicker">
             Choose image
         </label>
-        <input id="imagePicker" type="file" accept="image/*" capture>
+        <input id="imagePicker" type="file" accept="image/*">
     </div>
 
     <div>
@@ -25,7 +32,7 @@
     </div>
 
     <script>
-        document.querySelector("#imagePicker").addEventListener("change", function() {
+        function showImage() {
             const reader = new FileReader();
 
             reader.addEventListener("load", () => {
@@ -38,7 +45,11 @@
             });
 
             reader.readAsDataURL(this.files[0]);
-        })
+        }
+
+        document.querySelector("#imageCapturer").addEventListener("change", showImage);
+
+        document.querySelector("#imagePicker").addEventListener("change", showImage);
     </script>
 </body>
 
